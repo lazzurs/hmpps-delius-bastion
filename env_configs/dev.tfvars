@@ -1,4 +1,5 @@
 bastion_domain_zone = "bastion-dev.probation.hmpps.dsd.io."
+bastion_domain_name = "bastion-dev.probation.hmpps.dsd.io"
 
 bastion_cidr_block = "10.161.98.0/25"
 
@@ -46,3 +47,5 @@ bastion_peering_ids = [
   "pcx-0608510cfe71433df,10.163.48.0/20,cr-jitbit-dev",
   "pcx-09d78b17b7f2cf70c,10.163.80.0/20,cr-unpaid-work-dev"
 ]
+
+vpn_cidr_block = "10.165.32.0/20"

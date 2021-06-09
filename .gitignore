@@ -8,6 +8,9 @@
 .idea/
 /hmpps-delius-bastion.iml
 *.plan
+*_ret
 
 **/backend.tf
 **/provider.tf
+
+.env
