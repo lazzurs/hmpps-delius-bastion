@@ -5,6 +5,7 @@ locals {
   common_name           = "${var.short_environment_identifier}-vpn"
   tags                  = var.tags
   identity_provider_ssm = var.vpn_configs["identity_provider_ssm"]
+  ssm_prefix            = var.vpn_configs["ssm_prefix"]
   vpc_id                = data.terraform_remote_state.vpn_vpc.outputs.vpc["id"]
   vpn_cidr              = data.terraform_remote_state.vpn_vpc.outputs.vpc["cidr"]
   public_ssl_arn        = data.terraform_remote_state.vpc.outputs.public_acm_info["arn"]

@@ -28,6 +28,7 @@ variable "vpn_configs" {
   default = {
     client_cidr_block     = "10.165.16.0/20"
     identity_provider_ssm = "moj-github-identity-provider"
+    ssm_prefix            = "/hmpps/pki/vpn"
   }
 }
 
@@ -57,3 +58,14 @@ variable "additional_security_groups" {
 variable "availability_zone" {
   type = map(string)
 }
+
+# variable "authorization_rules" {
+#   type = list(object({
+#     name                 = string
+#     access_group_id      = string
+#     authorize_all_groups = bool
+#     description          = string
+#     target_network_cidr  = string
+#   }))
+#   description = "List of objects describing the authorization rules for the client vpn"
+# }

@@ -4,11 +4,33 @@
 data "aws_caller_identity" "current" {
 }
 
+data "aws_partition" "current" {}
+
 #-------------------------------------------------------------
-## Getting the rds db password
+## Getting the ssm parameters
 #-------------------------------------------------------------
 data "aws_ssm_parameter" "identity_provider" {
   name = local.identity_provider_ssm
+}
+
+data "aws_ssm_parameter" "tls_ca_key" {
+  name = "${local.ssm_prefix}/int_ca/key"
+}
+
+data "aws_ssm_parameter" "tls_ca_cert" {
+  name = "${local.ssm_prefix}/int_ca/cert"
+}
+
+data "aws_ssm_parameter" "tls_ca_chain" {
+  name = "${local.ssm_prefix}/int_ca/chain"
+}
+
+data "aws_ssm_parameter" "server_tls_cert" {
+  name = "${local.ssm_prefix}/server/cert"
+}
+
+data "aws_ssm_parameter" "server_tls_key" {
+  name = "${local.ssm_prefix}/server/key"
 }
 
 #-------------------------------------------------------------
